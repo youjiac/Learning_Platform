@@ -1,0 +1,35 @@
+/* Ideas.css */
+.ideas {
+    padding: 20px;
+  }
+  
+  .ideas h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .ideas input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(100% - 120px);
+  }
+  
+  .ideas button {
+    padding: 10px;
+  }
+  
+  .ideas ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .ideas li {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: left;
+  }
+  
