@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -10,9 +9,8 @@ import Ideas from './components/Ideas';
 import Course1 from './components/Course1';
 import Course2 from './components/Course2';
 import Course3 from './components/Course3';
-import { auth } from './firebase'; // 引入已初始化的 Firebase 配置
-
-// eslint-disable-next-line
+import Home from './components/Home';  // 新增 Home 組件
+import { auth } from './firebase'; 
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -35,18 +33,18 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/Learning_Platform"> 
       <div className="App">
         <Header isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
         <Routes>
           <Route path="/login" element={<Login handleLogin={handleLogin} />} />
-          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Login handleLogin={handleLogin} />} />
+          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Home />} />
           <Route path="/chatrooms" element={isAuthenticated ? <ChatRooms /> : <Login handleLogin={handleLogin} />} />
           <Route path="/ideas" element={isAuthenticated ? <Ideas /> : <Login handleLogin={handleLogin} />} />
           <Route path="/course1" element={isAuthenticated ? <Course1 /> : <Login handleLogin={handleLogin} />} />
           <Route path="/course2" element={isAuthenticated ? <Course2 /> : <Login handleLogin={handleLogin} />} />
           <Route path="/course3" element={isAuthenticated ? <Course3 /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/" element={<Dashboard />} /> {/* 設置主頁為 Dashboard */}
+          <Route path="/" element={<Home />} />  {/* 設置主頁為 Home 組件 */}
         </Routes>
       </div>
     </Router>
