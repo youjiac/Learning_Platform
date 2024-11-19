@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/youjiac/Learning_Platform/static/css/main.5beef297.css",
-    "main.js": "/youjiac/Learning_Platform/static/js/main.3de1a850.js",
+    "main.css": "/youjiac/Learning_Platform/static/css/main.872f0368.css",
+    "main.js": "/youjiac/Learning_Platform/static/js/main.28f3e007.js",
     "static/js/453.de7a5c9b.chunk.js": "/youjiac/Learning_Platform/static/js/453.de7a5c9b.chunk.js",
     "index.html": "/youjiac/Learning_Platform/index.html",
-    "main.5beef297.css.map": "/youjiac/Learning_Platform/static/css/main.5beef297.css.map",
-    "main.3de1a850.js.map": "/youjiac/Learning_Platform/static/js/main.3de1a850.js.map",
+    "main.872f0368.css.map": "/youjiac/Learning_Platform/static/css/main.872f0368.css.map",
+    "main.28f3e007.js.map": "/youjiac/Learning_Platform/static/js/main.28f3e007.js.map",
     "453.de7a5c9b.chunk.js.map": "/youjiac/Learning_Platform/static/js/453.de7a5c9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5beef297.css",
-    "static/js/main.3de1a850.js"
+    "static/css/main.872f0368.css",
+    "static/js/main.28f3e007.js"
   ]
 }
