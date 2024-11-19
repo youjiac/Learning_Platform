@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Learning_Platform/static/css/main.e9b37bb0.css",
-    "main.js": "/Learning_Platform/static/js/main.85a88959.js",
-    "static/js/453.de7a5c9b.chunk.js": "/Learning_Platform/static/js/453.de7a5c9b.chunk.js",
-    "index.html": "/Learning_Platform/index.html",
-    "main.e9b37bb0.css.map": "/Learning_Platform/static/css/main.e9b37bb0.css.map",
-    "main.85a88959.js.map": "/Learning_Platform/static/js/main.85a88959.js.map",
-    "453.de7a5c9b.chunk.js.map": "/Learning_Platform/static/js/453.de7a5c9b.chunk.js.map"
+    "main.css": "/youjiac/Learning_Platform/static/css/main.5beef297.css",
+    "main.js": "/youjiac/Learning_Platform/static/js/main.3de1a850.js",
+    "static/js/453.de7a5c9b.chunk.js": "/youjiac/Learning_Platform/static/js/453.de7a5c9b.chunk.js",
+    "index.html": "/youjiac/Learning_Platform/index.html",
+    "main.5beef297.css.map": "/youjiac/Learning_Platform/static/css/main.5beef297.css.map",
+    "main.3de1a850.js.map": "/youjiac/Learning_Platform/static/js/main.3de1a850.js.map",
+    "453.de7a5c9b.chunk.js.map": "/youjiac/Learning_Platform/static/js/453.de7a5c9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9b37bb0.css",
-    "static/js/main.85a88959.js"
+    "static/css/main.5beef297.css",
+    "static/js/main.3de1a850.js"
   ]
 }
