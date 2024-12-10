@@ -1,53 +1,40 @@
+// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import ChatRooms from './components/ChatRooms';
-import Ideas from './components/Ideas';
-import Course1 from './components/Course1';
-import Course2 from './components/Course2';
-import Course3 from './components/Course3';
-import Home from './components/Home';  // 新增 Home 組件
-import { auth } from './firebase'; 
+import { AuthProvider } from './contexts/AuthContext';
+import PrivateRoute from './components/common/PrivateRoute';
+import Layout from './components/layout/Layout';
+import * as ROUTES from './constants/routes';
+
+// Lazy loading for pages
+const Home = React.lazy(() => import('./pages/Home'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Dashboard = React.lazy(() => import('./pages/Dashboard'));
+// ... 其他頁面
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const authStatus = localStorage.getItem('isAuthenticated');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-    localStorage.setItem('isAuthenticated', 'true');
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem('isAuthenticated');
-  };
-
   return (
-    <Router basename="/Learning_Platform"> 
-      <div className="App">
-        <Header isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
-        <Routes>
-          <Route path="/login" element={<Login handleLogin={handleLogin} />} />
-          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Home />} />
-          <Route path="/chatrooms" element={isAuthenticated ? <ChatRooms /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/ideas" element={isAuthenticated ? <Ideas /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/course1" element={isAuthenticated ? <Course1 /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/course2" element={isAuthenticated ? <Course2 /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/course3" element={isAuthenticated ? <Course3 /> : <Login handleLogin={handleLogin} />} />
-          <Route path="/" element={<Home />} />  {/* 設置主頁為 Home 組件 */}
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router basename="/Learning_Platform">
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Layout>
+            <Routes>
+              <Route path={ROUTES.HOME} element={<Home />} />
+              <Route path={ROUTES.LOGIN} element={<Login />} />
+              <Route 
+                path={ROUTES.DASHBOARD} 
+                element={
+                  <PrivateRoute>
+                    <Dashboard />
+                  </PrivateRoute>
+                } 
+              />
+              {/* ... 其他路由 */}
+            </Routes>
+          </Layout>
+        </React.Suspense>
+      </Router>
+    </AuthProvider>
   );
 }
 
